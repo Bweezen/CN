@@ -1,0 +1,29 @@
+Main Router 
+
+conf t
+int s1/0
+ip add 100.1.1.2 255.255.255.0
+no shut
+
+int s1/1
+ip add 20.1.1.1 255.255.255.0
+no shut 
+
+router rip 
+version 2
+network 20.1.1.0 
+network 100.1.1.0
+
+Perform for the derived routers in the same way (don't rip)
+
+# Manually Connecting two routers
+
+conf t 
+int s1/0
+ip add 100.1.1.2 255.255.255.0
+no shut
+
+int s1/1
+ip add 20.1.1.1 255.255.255.0
+no shut 
+clock rate 64000
